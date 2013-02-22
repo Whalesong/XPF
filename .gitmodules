@@ -1,0 +1,6 @@
+[submodule "Rx-MonoTouch"]
+	path = Rx-MonoTouch
+	url = https://AlexHertzog@github.com/Whalesong/rx-monotouch.git
+[submodule "MonoGame"]
+	path = MonoGame
+	url = https://github.com/mono/MonoGame.git
