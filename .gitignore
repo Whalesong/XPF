@@ -26,3 +26,4 @@ stylecopviolations.xml
 *.local.sln
 NuGet/*/*/*/*.dll
 *.nupkg
+*.userprefs
