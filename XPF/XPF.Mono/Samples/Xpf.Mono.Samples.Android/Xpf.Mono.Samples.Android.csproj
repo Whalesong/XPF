@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA2D9327-1476-4861-85FA-F702F8540183}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Xpf.Mono.Samples.Android</RootNamespace>
+    <AssemblyName>Xpf.Mono.Samples.Android</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidSupportedAbis>armeabi%3barmeabi-v7a%3bx86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkSkip />
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <BundleAssemblies>False</BundleAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="OpenTK" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity1.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\S01\MyComponent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\S05\WithBindingFactory\Card.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\S05\WithBindingFactory\MyComponent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\S05\WithoutBindingFactory\Card.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\S05\WithoutBindingFactory\MyComponent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\spriteFont1.xnb" />
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\S01\MySpriteFont.xnb">
+      <Link>Assets\Content\XpfSamples\S01\MySpriteFont.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\S05\FaceDown.xnb">
+      <Link>Assets\Content\XpfSamples\S05\FaceDown.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\S05\FaceUp.xnb">
+      <Link>Assets\Content\XpfSamples\S05\FaceUp.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\S05\SpriteFont.xnb">
+      <Link>Assets\Content\XpfSamples\S05\SpriteFont.xnb</Link>
+    </AndroidAsset>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Layout\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.Android.csproj">
+      <Project>{BA9476CF-99BA-4D03-92F2-73D2C5E58883}</Project>
+      <Name>MonoGame.Framework.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\MonoGame\ThirdParty\Lidgren.Network\Lidgren.Network.Android.csproj">
+      <Project>{565129E0-4EE5-4F6F-B403-C3484C9740BE}</Project>
+      <Name>Lidgren.Network.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Rx-MonoTouch\rx-monodroid.csproj">
+      <Project>{3eef7a01-8f0c-45ed-8431-7e9827e1a544}</Project>
+      <Name>rx-monodroid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\RedBadger.Xpf.Adapters.Xna\RedBadger.Xpf.Adapters.Xna.Android.csproj">
+      <Project>{09c35691-1d45-433a-9d18-e0877660c2a8}</Project>
+      <Name>RedBadger.Xpf.Adapters.Xna.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\RedBadger.Xpf\RedBadger.Xpf.Android.csproj">
+      <Project>{a8aa2620-573f-4c92-b164-3d42707cee95}</Project>
+      <Name>RedBadger.Xpf.Android</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

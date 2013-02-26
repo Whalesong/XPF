@@ -49,6 +49,7 @@ namespace RedBadger.Xpf.Adapters.Xna.Graphics
         {
             get
             {
+				var x = this.texture2D.Height;
                 return this.texture2D.Height;
             }
         }

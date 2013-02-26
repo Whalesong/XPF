@@ -43,11 +43,11 @@ namespace RedBadger.Xpf
             DateTime expiryDate = buildDateTime.AddDays(30).Date;
             DateTime nowDate = DateTime.Now.Date;
 
-            if (expiryDate < nowDate)
-            {
-                throw new InvalidOperationException(
-                    "Your trial license of XPF has expired.  Please visit http://red-badger.com to obtain a license or download the latest nightly build.");
-            }
+            //if (expiryDate < nowDate)
+            //{
+            //    throw new InvalidOperationException(
+            //        "Your trial license of XPF has expired.  Please visit http://red-badger.com to obtain a license or download the latest nightly build.");
+            //}
 
             double remainingDays = expiryDate.Subtract(nowDate).TotalDays;
             Debug.WriteLine("Red Badger XPF Trial Licence: You have {0} days remaining", remainingDays);
