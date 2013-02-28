@@ -3,14 +3,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>12.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BB527F1C-D3CD-4D80-A3E3-73309ED58076}</ProjectGuid>
+    <ProjectGuid>{626472C5-FC8E-4B8C-A5E6-1375F0F64B73}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DummyProject.iOS</RootNamespace>
+    <RootNamespace>Xpf.Mono.Samples.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>DummyProjectiOS</AssemblyName>
+    <AssemblyName>XpfMonoSamplesiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>True</DebugSymbols>
@@ -80,24 +80,55 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="OpenTK" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Samples\S01\" />
+    <Folder Include="Samples\S05\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\S01\MySpriteFont.xnb">
+      <Link>Content\XpfSamples\S01\MySpriteFont.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\S05\FaceDown.xnb">
+      <Link>Content\XpfSamples\S05\FaceDown.xnb</Link>
+    </None>
+    <None Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\S05\FaceUp.xnb">
+      <Link>Content\XpfSamples\S05\FaceUp.xnb</Link>
+    </None>
+    <None Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\S05\SpriteFont.xnb">
+      <Link>Content\XpfSamples\S05\SpriteFont.xnb</Link>
+    </None>
     <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="DummyProject_iOSViewController.cs" />
-    <Compile Include="DummyProject_iOSViewController.designer.cs">
-      <DependentUpon>DummyProject_iOSViewController.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="DummyProject_iOSViewController_iPhone.xib" />
-    <InterfaceDefinition Include="DummyProject_iOSViewController_iPad.xib" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Samples\R01\MyComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
+      <Project>{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}</Project>
+      <Name>MonoGame.Framework.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\MonoGame\ThirdParty\Lidgren.Network\Lidgren.Network.iOS.csproj">
+      <Project>{734eaa48-f1ca-481a-b391-0285bc0e8b40}</Project>
+      <Name>Lidgren.Network.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Rx-MonoTouch\rx-monotouch.csproj">
+      <Project>{b201c111-f231-4d4a-9500-df2ca8d5fd33}</Project>
+      <Name>rx-monotouch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\RedBadger.Xpf.Adapters.Xna\RedBadger.Xpf.Adapters.Xna.iOS.csproj">
+      <Project>{24a681a6-c859-4ade-ab69-a950ac03b28d}</Project>
+      <Name>RedBadger.Xpf.Adapters.Xna.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\RedBadger.Xpf\RedBadger.Xpf.iOS.csproj">
+      <Project>{468908c5-d80a-4999-9174-4d9ea8f1cd30}</Project>
+      <Name>RedBadger.Xpf.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

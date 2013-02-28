@@ -1,25 +1,32 @@
+﻿#region Using Statements
+using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Storage;
+using Microsoft.Xna.Framework.GamerServices;
+#endregion
 
-namespace Xpf.Mono.Samples.Android
+namespace Xpf.Mono.Samples.WindowsGL
 {
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
 
         public Game1()
+            : base()
         {
             graphics = new GraphicsDeviceManager(this);
-            //graphics.PreferredBackBufferWidth = 800;
-            //graphics.PreferredBackBufferHeight = 480;
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 480;
+            IsMouseVisible = true;
             Content.RootDirectory = "Content/XpfSamples/S01";
             //Content.RootDirectory = "Content/XpfSamples/S05";
-            graphics.IsFullScreen = true;
-            graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
         }
 
         /// <summary>
@@ -31,10 +38,10 @@ namespace Xpf.Mono.Samples.Android
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S01.MyComponent(this));
-            //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S05.WithoutBindingFactory.MyComponent(this));
-            //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S05.WithBindingFactory.MyComponent(this));
-            this.Components.Add(new Xpf.Mono.Samples.Android.Samples.R01.MyComponent(this));
+            //this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.S01.MyComponent(this));
+            //this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.S05.WithoutBindingFactory.MyComponent(this));
+            //this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.S05.WithBindingFactory.MyComponent(this));
+            this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.R01.MyComponent(this));
             base.Initialize();
         }
 
@@ -45,6 +52,18 @@ namespace Xpf.Mono.Samples.Android
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
+            //spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            // TODO: use this.Content to load your game content here
+        }
+
+        /// <summary>
+        /// UnloadContent will be called once per game and is the place to unload
+        /// all content.
+        /// </summary>
+        protected override void UnloadContent()
+        {
+            // TODO: Unload any non ContentManager content here
         }
 
         /// <summary>
@@ -54,10 +73,8 @@ namespace Xpf.Mono.Samples.Android
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-            {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            }
 
             // TODO: Add your update logic here
 
@@ -70,7 +87,10 @@ namespace Xpf.Mono.Samples.Android
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            // TODO: Add your drawing code here
+
             base.Draw(gameTime);
         }
     }

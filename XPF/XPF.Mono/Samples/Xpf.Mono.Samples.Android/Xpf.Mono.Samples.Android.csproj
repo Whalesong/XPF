@@ -57,6 +57,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\R01\MyComponent.cs" />
     <Compile Include="Samples\S01\MyComponent.cs">
       <SubType>Code</SubType>
     </Compile>

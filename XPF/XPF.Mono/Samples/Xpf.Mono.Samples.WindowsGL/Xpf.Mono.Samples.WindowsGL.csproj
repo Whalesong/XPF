@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A98DB6FA-B716-4925-BDBC-788450CE8E92}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Xpf.Mono.Samples.WindowsGL</RootNamespace>
+    <AssemblyName>Xpf.Mono.Samples.WindowsGL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\WindowsGL\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\WindowsGL\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Game1.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\R01\MyComponent.cs" />
+    <Compile Include="Samples\S01\MyComponent.cs" />
+    <Compile Include="Samples\S05\WithBindingFactory\Card.cs" />
+    <Compile Include="Samples\S05\WithBindingFactory\MyComponent.cs" />
+    <Compile Include="Samples\S05\WithoutBindingFactory\Card.cs" />
+    <Compile Include="Samples\S05\WithoutBindingFactory\MyComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MonoGame\ThirdParty\Libs\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tao.Sdl, Version=1.2.13.0, Culture=neutral, PublicKeyToken=9c7a200e36c0094e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MonoGame\ThirdParty\GamepadConfig\Tao.Sdl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
+      <Project>{7de47032-a904-4c29-bd22-2d235e8d91ba}</Project>
+      <Name>MonoGame.Framework.WindowsGL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\MonoGame\ThirdParty\Lidgren.Network\Lidgren.Network.Windows.csproj">
+      <Project>{ae483c29-042e-4226-ba52-d247ce7676da}</Project>
+      <Name>Lidgren.Network.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Rx-MonoTouch\rx-windows.csproj">
+      <Project>{cfae6c22-0541-4132-a124-dc11b1770714}</Project>
+      <Name>rx-windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\RedBadger.Xpf.Adapters.Xna\RedBadger.Xpf.Adapters.Xna.csproj">
+      <Project>{4c0c9785-d77c-4833-8b2f-4c20525d9b2d}</Project>
+      <Name>RedBadger.Xpf.Adapters.Xna</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\RedBadger.Xpf\RedBadger.Xpf.csproj">
+      <Project>{b72c465c-f710-4e8b-a10f-2da339be3b0d}</Project>
+      <Name>RedBadger.Xpf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Windows\Content\XpfSamples\S01\MySpriteFont.xnb">
+      <Link>Content\XpfSamples\S01\MySpriteFont.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Windows\Content\XpfSamples\S05\FaceDown.xnb">
+      <Link>Content\XpfSamples\S05\FaceDown.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Windows\Content\XpfSamples\S05\FaceUp.xnb">
+      <Link>Content\XpfSamples\S05\FaceUp.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Windows\Content\XpfSamples\S05\SpriteFont.xnb">
+      <Link>Content\XpfSamples\S05\SpriteFont.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

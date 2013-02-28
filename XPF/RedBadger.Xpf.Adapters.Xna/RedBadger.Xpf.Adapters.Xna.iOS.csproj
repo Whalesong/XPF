@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24A681A6-C859-4ADE-AB69-A950AC03B28D}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RedBadger.Xpf.Adapters.Xna.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>RedBadger.Xpf.Adapters.Xna.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\iOS</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\iOS</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Graphics\" />
+    <Folder Include="Input\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Graphics\DrawingContext.cs" />
+    <Compile Include="Graphics\PrimitivesService.cs" />
+    <Compile Include="Graphics\RectExtensions.cs" />
+    <Compile Include="Graphics\Renderer.cs" />
+    <Compile Include="Graphics\SpriteBatchAdapter.cs" />
+    <Compile Include="Graphics\SpriteFontAdapter.cs" />
+    <Compile Include="Graphics\SpriteFontJob.cs" />
+    <Compile Include="Graphics\SpriteImageJob.cs" />
+    <Compile Include="Graphics\SpriteTextureJob.cs" />
+    <Compile Include="Graphics\Texture2DAdapter.cs" />
+    <Compile Include="Graphics\ViewportExtensions.cs" />
+    <Compile Include="Input\InputManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
+      <Project>{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}</Project>
+      <Name>MonoGame.Framework.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RedBadger.Xpf\RedBadger.Xpf.iOS.csproj">
+      <Project>{468908C5-D80A-4999-9174-4D9EA8F1CD30}</Project>
+      <Name>RedBadger.Xpf.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Rx-MonoTouch\rx-monotouch.csproj">
+      <Project>{B201C111-F231-4D4A-9500-DF2CA8D5FD33}</Project>
+      <Name>rx-monotouch</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
