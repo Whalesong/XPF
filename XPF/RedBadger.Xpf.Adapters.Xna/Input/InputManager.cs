@@ -27,6 +27,7 @@ namespace RedBadger.Xpf.Adapters.Xna.Input
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Reactive.Subjects;
     using Microsoft.Xna.Framework.Input;
     using Microsoft.Xna.Framework.Input.Touch;
@@ -85,6 +86,25 @@ namespace RedBadger.Xpf.Adapters.Xna.Input
             }
 
             this.previousState = currentState;
+            var touchState = TouchPanel.GetState();
+            var ptr = touchState.FirstOrDefault();
+
+            TouchLocation prevLoc;
+            if (!ptr.TryGetPreviousLocation(out prevLoc))
+            {
+                if (ptr.State == TouchLocationState.Pressed)
+                {
+                    this.gestures.OnNext(new Gesture(Xpf.Input.GestureType.LeftButtonDown,new Point(ptr.Position.X,ptr.Position.Y)));
+                }
+            }
+            else
+            {
+                if (prevLoc.State == TouchLocationState.Moved && ptr.State == TouchLocationState.Released)
+                {
+                    this.gestures.OnNext(new Gesture(Xpf.Input.GestureType.LeftButtonUp,new Point(ptr.Position.X,ptr.Position.Y)));
+                }
+            }
+
 
             while (TouchPanel.IsGestureAvailable)
             {

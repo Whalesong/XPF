@@ -17,8 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{DC6B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xpf.Mono.Samples.Android", "Samples\Xpf.Mono.Samples.Android\Xpf.Mono.Samples.Android.csproj", "{EA2D9327-1476-4861-85FA-F702F8540183}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{6FFB31A3-8E6F-4AB4-87E9-713D0C9CDD18}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rx-monodroid", "..\..\Rx-MonoTouch\rx-monodroid.csproj", "{7E2AD0CA-D48A-4AF5-97E2-28937BEB80D0}"
 EndProject
 Global
@@ -160,7 +158,6 @@ Global
 		{BA9476CF-99BA-4D03-92F2-73D2C5E58883} = {3958EC75-485C-4ED3-A70C-643BE3F61D6C}
 		{7E2AD0CA-D48A-4AF5-97E2-28937BEB80D0} = {655EF23B-A670-47E2-B0D9-E97510F30064}
 		{EA2D9327-1476-4861-85FA-F702F8540183} = {DC6BC74D-B959-45A4-B50E-5465FF6928F3}
-		{6FFB31A3-8E6F-4AB4-87E9-713D0C9CDD18} = {DC6BC74D-B959-45A4-B50E-5465FF6928F3}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Samples\Xpf.Mono.Samples.Android\Xpf.Mono.Samples.Android.csproj
