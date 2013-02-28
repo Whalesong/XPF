@@ -143,7 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Rx-MonoTouch\rx-monodroid.csproj">
-      <Project>{3EEF7A01-8F0C-45ED-8431-7E9827E1A544}</Project>
+      <Project>{7e2ad0ca-d48a-4af5-97e2-28937beb80d0}</Project>
       <Name>rx-monodroid</Name>
     </ProjectReference>
   </ItemGroup>

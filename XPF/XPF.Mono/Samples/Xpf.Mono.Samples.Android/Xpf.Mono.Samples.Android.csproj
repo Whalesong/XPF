@@ -116,7 +116,7 @@
       <Name>Lidgren.Network.Android</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Rx-MonoTouch\rx-monodroid.csproj">
-      <Project>{3eef7a01-8f0c-45ed-8431-7e9827e1a544}</Project>
+      <Project>{7e2ad0ca-d48a-4af5-97e2-28937beb80d0}</Project>
       <Name>rx-monodroid</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\RedBadger.Xpf.Adapters.Xna\RedBadger.Xpf.Adapters.Xna.Android.csproj">

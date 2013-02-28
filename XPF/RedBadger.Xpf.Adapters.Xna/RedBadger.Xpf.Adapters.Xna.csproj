@@ -66,7 +66,7 @@
       <Name>MonoGame.Framework.WindowsGL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Rx-MonoTouch\rx-windows.csproj">
-      <Project>{cfae6c22-0541-4132-a124-dc11b1770714}</Project>
+      <Project>{7e5d0d21-d7c6-4c2d-8730-7147dac19e8e}</Project>
       <Name>rx-windows</Name>
     </ProjectReference>
     <ProjectReference Include="..\RedBadger.Xpf\RedBadger.Xpf.csproj">
