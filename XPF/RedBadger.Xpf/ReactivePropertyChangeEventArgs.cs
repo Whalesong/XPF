@@ -25,7 +25,7 @@
 
 namespace RedBadger.Xpf
 {
-    public struct ReactivePropertyChangeEventArgs<T>
+    public class ReactivePropertyChangeEventArgs<T>
     {
         public readonly T NewValue;
 

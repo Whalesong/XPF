@@ -23,6 +23,16 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxBool = System.Reactive.MonoTouch.ValueWrapper<System.Boolean>;
+using RxDouble = System.Reactive.MonoTouch.ValueWrapper<System.Double>;
+using RxThickness = System.Reactive.MonoTouch.StructWrapper<RedBadger.Xpf.Thickness>;
+#else
+using RxBool = System.Boolean;
+using RxDouble = System.Double;
+using RxThickness = RedBadger.Xpf.Thickness;
+#endif
+
 namespace RedBadger.Xpf
 {
     using System;
@@ -35,54 +45,73 @@ namespace RedBadger.Xpf
     using RedBadger.Xpf.Input;
     using RedBadger.Xpf.Internal;
 
+
+
     public abstract class UIElement : ReactiveObject, IElement
     {
         public static readonly ReactiveProperty<object> DataContextProperty =
-            ReactiveProperty<object>.Register("DataContext", typeof(UIElement), DataContextChanged);
+            ReactiveProperty<object>.Register("DataContext",
+                                              typeof (UIElement),
+                                              DataContextChanged);
 
-        public static readonly ReactiveProperty<double> HeightProperty = ReactiveProperty<double>.Register(
-            "Height", typeof(UIElement), double.NaN, ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxDouble> HeightProperty =
+            ReactiveProperty<RxDouble>.Register("Height",
+                                              typeof (UIElement),
+                                              double.NaN,
+                                              ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         public static readonly ReactiveProperty<HorizontalAlignment> HorizontalAlignmentProperty =
-            ReactiveProperty<HorizontalAlignment>.Register(
-                "HorizontalAlignment", 
-                typeof(UIElement), 
-                HorizontalAlignment.Stretch, 
-                ReactivePropertyChangedCallbacks.InvalidateArrange);
+            ReactiveProperty<HorizontalAlignment>.Register("HorizontalAlignment",
+                                                           typeof (UIElement),
+                                                           HorizontalAlignment.Stretch,
+                                                           ReactivePropertyChangedCallbacks.InvalidateArrange);
 
-        public static readonly ReactiveProperty<bool> IsMouseCapturedProperty =
-            ReactiveProperty<bool>.Register("IsMouseCaptured", typeof(UIElement));
+        public static readonly ReactiveProperty<RxBool> IsMouseCapturedProperty =
+            ReactiveProperty<RxBool>.Register("IsMouseCaptured",
+                                              typeof (UIElement),
+			                                  false);
 
-        public static readonly ReactiveProperty<Thickness> MarginProperty =
-            ReactiveProperty<Thickness>.Register(
-                "Margin", typeof(UIElement), new Thickness(), ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxThickness> MarginProperty =
+            ReactiveProperty<RxThickness>.Register("Margin",
+                                                 typeof (UIElement),
+                                                 new Thickness(),
+                                                 ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
-        public static readonly ReactiveProperty<double> MaxHeightProperty =
-            ReactiveProperty<double>.Register(
-                "MaxHeight", 
-                typeof(UIElement), 
-                double.PositiveInfinity, 
-                ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxDouble> MaxHeightProperty =
+            ReactiveProperty<RxDouble>.Register("MaxHeight",
+                                              typeof (UIElement),
+                                              double.PositiveInfinity,
+                                              ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
-        public static readonly ReactiveProperty<double> MaxWidthProperty = ReactiveProperty<double>.Register(
-            "MaxWidth", typeof(UIElement), double.PositiveInfinity, ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxDouble> MaxWidthProperty =
+            ReactiveProperty<RxDouble>.Register("MaxWidth",
+                                                typeof (UIElement),
+                                                double.PositiveInfinity,
+                                                ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
-        public static readonly ReactiveProperty<double> MinHeightProperty =
-            ReactiveProperty<double>.Register(
-                "MinHeight", typeof(UIElement), ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxDouble> MinHeightProperty =
+            ReactiveProperty<RxDouble>.Register("MinHeight",
+                                                typeof (UIElement),
+			                                    0d,
+                                                ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
-        public static readonly ReactiveProperty<double> MinWidthProperty = ReactiveProperty<double>.Register(
-            "MinWidth", typeof(UIElement), ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxDouble> MinWidthProperty =
+            ReactiveProperty<RxDouble>.Register("MinWidth",
+                                                typeof (UIElement),
+			                                    0d,
+                                                ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         public static readonly ReactiveProperty<VerticalAlignment> VerticalAlignmentProperty =
-            ReactiveProperty<VerticalAlignment>.Register(
-                "VerticalAlignment", 
-                typeof(UIElement), 
-                VerticalAlignment.Stretch, 
-                ReactivePropertyChangedCallbacks.InvalidateArrange);
+            ReactiveProperty<VerticalAlignment>.Register("VerticalAlignment",
+                                                         typeof (UIElement),
+                                                         VerticalAlignment.Stretch,
+                                                         ReactivePropertyChangedCallbacks.InvalidateArrange);
 
-        public static readonly ReactiveProperty<double> WidthProperty = ReactiveProperty<double>.Register(
-            "Width", typeof(UIElement), double.NaN, ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxDouble> WidthProperty =
+            ReactiveProperty<RxDouble>.Register("Width",
+                                                typeof (UIElement),
+                                                double.NaN,
+                                                ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         private readonly Subject<Gesture> gestures = new Subject<Gesture>();
 
@@ -642,33 +671,60 @@ namespace RedBadger.Xpf
                 verticalAlignment = VerticalAlignment.Top;
             }
 
-            switch (horizontalAlignment)
+            if(horizontalAlignment.Equals(HorizontalAlignment.Center) ||
+                horizontalAlignment.Equals(HorizontalAlignment.Stretch))
             {
-                case HorizontalAlignment.Center:
-                case HorizontalAlignment.Stretch:
-                    vector.X = (clientSize.Width - inkSize.Width) * 0.5;
-                    break;
-                case HorizontalAlignment.Left:
-                    vector.X = 0;
-                    break;
-                case HorizontalAlignment.Right:
-                    vector.X = clientSize.Width - inkSize.Width;
-                    break;
+                vector.X = (clientSize.Width - inkSize.Width)*0.5;
+            }
+            else if (horizontalAlignment.Equals(HorizontalAlignment.Left))
+            {
+                vector.X = 0;
+            }
+            else if (horizontalAlignment.Equals(HorizontalAlignment.Right))
+            {
+                vector.X = clientSize.Width - inkSize.Width;
+            }
+            //switch (horizontalAlignment)
+            //{
+            //    case HorizontalAlignment.Center:
+            //    case HorizontalAlignment.Stretch:
+            //        vector.X = (clientSize.Width - inkSize.Width) * 0.5;
+            //        break;
+            //    case HorizontalAlignment.Left:
+            //        vector.X = 0;
+            //        break;
+            //    case HorizontalAlignment.Right:
+            //        vector.X = clientSize.Width - inkSize.Width;
+            //        break;
+            //}
+
+            if (verticalAlignment.Equals(VerticalAlignment.Center) ||
+                verticalAlignment.Equals(VerticalAlignment.Stretch))
+            {
+                vector.Y = (clientSize.Height - inkSize.Height) * 0.5;
+            }
+            else if (verticalAlignment.Equals(VerticalAlignment.Bottom))
+            {
+                vector.Y = clientSize.Height - inkSize.Height;
+            }
+            else if (verticalAlignment.Equals(VerticalAlignment.Top))
+            {
+                vector.Y = 0;
             }
 
-            switch (verticalAlignment)
-            {
-                case VerticalAlignment.Center:
-                case VerticalAlignment.Stretch:
-                    vector.Y = (clientSize.Height - inkSize.Height) * 0.5;
-                    return vector;
-                case VerticalAlignment.Bottom:
-                    vector.Y = clientSize.Height - inkSize.Height;
-                    return vector;
-                case VerticalAlignment.Top:
-                    vector.Y = 0;
-                    break;
-            }
+            //switch (verticalAlignment)
+            //{
+            //    case VerticalAlignment.Center:
+            //    case VerticalAlignment.Stretch:
+            //        vector.Y = (clientSize.Height - inkSize.Height) * 0.5;
+            //        return vector;
+            //    case VerticalAlignment.Bottom:
+            //        vector.Y = clientSize.Height - inkSize.Height;
+            //        return vector;
+            //    case VerticalAlignment.Top:
+            //        vector.Y = 0;
+            //        break;
+            //}
 
             return vector;
         }

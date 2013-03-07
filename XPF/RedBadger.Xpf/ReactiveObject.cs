@@ -206,11 +206,10 @@ namespace RedBadger.Xpf
             IObservable<T> leftSource = subject.StartWith(property.DefaultValue);
             IObservable<T> rightSource = leftSource.Skip(1);
 
-            leftSource.Zip(
-                rightSource, 
-                (oldValue, newValue) => new ReactivePropertyChangeEventArgs<T>(property, oldValue, newValue)).Where(
-                    propertyChange => !object.Equals(propertyChange.OldValue, propertyChange.NewValue)).Subscribe(
-                        this.RaiseChanged);
+            leftSource.Zip(rightSource,
+                           (oldValue, newValue) => new ReactivePropertyChangeEventArgs<T>(property, oldValue, newValue))
+                      .Where(propertyChange => !object.Equals(propertyChange.OldValue, propertyChange.NewValue))
+                      .Subscribe(this.RaiseChanged);
 
             this.propertyValues.Add(property, subject);
             return subject;

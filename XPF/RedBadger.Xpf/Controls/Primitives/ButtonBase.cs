@@ -67,36 +67,64 @@ namespace RedBadger.Xpf.Controls.Primitives
                 return;
             }
 
-            switch (gesture.Type)
+            if (gesture.Type.Equals(GestureType.LeftButtonDown))
             {
-                case GestureType.LeftButtonDown:
-                    this.isLeftButtonDown = true;
+                this.isLeftButtonDown = true;
 
-                    if (this.CaptureMouse())
-                    {
-                        this.IsPressed = true;
-                    }
-
-                    break;
-                case GestureType.LeftButtonUp:
-                    this.isLeftButtonDown = false;
-
-                    if (this.IsPressed)
-                    {
-                        this.OnClick();
-                    }
-
-                    this.ReleaseMouseCapture();
-                    this.IsPressed = false;
-                    break;
-                case GestureType.Move:
-                    if (this.isLeftButtonDown && this.IsMouseCaptured)
-                    {
-                        this.IsPressed = this.HitTest(gesture.Point);
-                    }
-
-                    break;
+                if (this.CaptureMouse())
+                {
+                    this.IsPressed = true;
+                }
             }
+            else if (gesture.Type.Equals(GestureType.LeftButtonUp))
+            {
+                this.isLeftButtonDown = false;
+
+                if (this.IsPressed)
+                {
+                    this.OnClick();
+                }
+
+                this.ReleaseMouseCapture();
+                this.IsPressed = false;
+            }
+            else if (gesture.Type.Equals(GestureType.Move))
+            {
+                if (this.isLeftButtonDown && this.IsMouseCaptured)
+                {
+                    this.IsPressed = this.HitTest(gesture.Point);
+                }
+            }
+            //switch (gesture.Type)
+            //{
+            //    case GestureType.LeftButtonDown:
+            //        this.isLeftButtonDown = true;
+
+            //        if (this.CaptureMouse())
+            //        {
+            //            this.IsPressed = true;
+            //        }
+
+            //        break;
+            //    case GestureType.LeftButtonUp:
+            //        this.isLeftButtonDown = false;
+
+            //        if (this.IsPressed)
+            //        {
+            //            this.OnClick();
+            //        }
+
+            //        this.ReleaseMouseCapture();
+            //        this.IsPressed = false;
+            //        break;
+            //    case GestureType.Move:
+            //        if (this.isLeftButtonDown && this.IsMouseCaptured)
+            //        {
+            //            this.IsPressed = this.HitTest(gesture.Point);
+            //        }
+
+            //        break;
+            //}
         }
     }
 }

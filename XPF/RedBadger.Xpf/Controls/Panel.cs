@@ -34,7 +34,8 @@ namespace RedBadger.Xpf.Controls
     public abstract class Panel : UIElement
     {
         public static readonly ReactiveProperty<Brush> BackgroundProperty =
-            ReactiveProperty<Brush>.Register("Background", typeof(Panel));
+            ReactiveProperty<Brush>.Register("Background",
+                                             typeof (Panel));
 
         private IList<IElement> children;
 

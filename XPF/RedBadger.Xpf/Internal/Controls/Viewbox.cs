@@ -54,16 +54,25 @@ namespace RedBadger.Xpf.Internal.Controls
             }
             else
             {
-                switch (stretch)
+                if (stretch.Equals(Stretch.Uniform))
                 {
-                    case Stretch.Uniform:
-                        scaleX = scaleY = (scaleX < scaleY) ? scaleX : scaleY;
-                        break;
-
-                    case Stretch.UniformToFill:
-                        scaleX = scaleY = (scaleX > scaleY) ? scaleX : scaleY;
-                        break;
+                    scaleX = scaleY = (scaleX < scaleY) ? scaleX : scaleY;
                 }
+                else if (stretch.Equals(Stretch.UniformToFill))
+                {
+                    scaleX = scaleY = (scaleX > scaleY) ? scaleX : scaleY;
+                }
+
+                //switch (stretch)
+                //{
+                //    case Stretch.Uniform:
+                //        scaleX = scaleY = (scaleX < scaleY) ? scaleX : scaleY;
+                //        break;
+
+                //    case Stretch.UniformToFill:
+                //        scaleX = scaleY = (scaleX > scaleY) ? scaleX : scaleY;
+                //        break;
+                //}
             }
 
             switch (stretchDirection)

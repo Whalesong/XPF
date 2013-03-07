@@ -25,9 +25,16 @@
 
 namespace RedBadger.Xpf
 {
-    public enum TextWrapping
+    public class TextWrapping:RefEnum
     {
-        NoWrap, 
-        Wrap
+        private TextWrapping(string txt, int id):base(txt,id){}
+
+        public static TextWrapping NoWrap{get{return new TextWrapping("NoWrap",1);}}
+        public static TextWrapping Wrap{get{return new TextWrapping("Wrap",2);}}
     }
+    //public enum TextWrapping
+    //{
+    //    NoWrap, 
+    //    Wrap
+    //}
 }

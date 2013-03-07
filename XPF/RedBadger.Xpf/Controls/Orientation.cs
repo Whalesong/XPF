@@ -25,9 +25,19 @@
 
 namespace RedBadger.Xpf.Controls
 {
-    public enum Orientation
+    public class Orientation:RefEnum
     {
-        Horizontal, 
-        Vertical
+        private Orientation(string txt, int id):base(txt,id)
+        {}
+
+        public static Orientation Horizontal{get{return new Orientation("Horizontal",1);}}
+        public static Orientation Vertical { get { return new Orientation("Vertical", 2); } }
+
     }
+
+    //public enum Orientation
+    //{
+    //    Horizontal, 
+    //    Vertical
+    //}
 }

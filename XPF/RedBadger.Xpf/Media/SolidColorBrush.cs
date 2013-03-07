@@ -23,6 +23,12 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxColor = System.Reactive.MonoTouch.StructWrapper<RedBadger.Xpf.Media.Color>;
+#else
+using RxColor = RedBadger.Xpf.Media.Color;
+#endif
+
 namespace RedBadger.Xpf.Media
 {
     using System;
@@ -35,8 +41,10 @@ namespace RedBadger.Xpf.Media
         /// <summary>
         ///     <see cref = "ReactiveProperty{T}">ReactiveProperty</see> representing the <see cref = "Color">Color</see> property.
         /// </summary>
-        public static readonly ReactiveProperty<Color> ColorProperty = ReactiveProperty<Color>.Register(
-            "Color", typeof(SolidColorBrush), Colors.White);
+        public static readonly ReactiveProperty<RxColor> ColorProperty = 
+            ReactiveProperty<RxColor>.Register("Color", 
+            typeof(SolidColorBrush), 
+            Colors.White);
 
         /// <summary>
         ///     Initializes a new instance of the <see cref = "SolidColorBrush">SolidColorBrush</see> class.

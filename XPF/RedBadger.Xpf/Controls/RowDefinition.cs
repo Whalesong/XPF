@@ -23,18 +23,34 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxBool = System.Reactive.MonoTouch.ValueWrapper<System.Boolean>;
+using RxDouble = System.Reactive.MonoTouch.ValueWrapper<System.Double>;
+using RxGridLength = System.Reactive.MonoTouch.StructWrapper<RedBadger.Xpf.GridLength>;
+#else
+using RxBool = System.Boolean;
+using RxDouble = System.Double;
+using RxGridLength = RedBadger.Xpf.GridLength;
+#endif
+
 namespace RedBadger.Xpf.Controls
 {
     public class RowDefinition : DefinitionBase
     {
-        public static readonly ReactiveProperty<GridLength> HeightProperty =
-            ReactiveProperty<GridLength>.Register("Height", typeof(RowDefinition), new GridLength(1, GridUnitType.Star));
+        public static readonly ReactiveProperty<RxGridLength> HeightProperty =
+            ReactiveProperty<RxGridLength>.Register("Height",
+                                                  typeof (RowDefinition),
+                                                  new GridLength(1, GridUnitType.Star));
 
-        public static readonly ReactiveProperty<double> MaxHeightProperty =
-            ReactiveProperty<double>.Register("MaxHeight", typeof(RowDefinition), double.PositiveInfinity);
+        public static readonly ReactiveProperty<RxDouble> MaxHeightProperty =
+            ReactiveProperty<RxDouble>.Register("MaxHeight",
+                                                typeof (RowDefinition),
+                                                double.PositiveInfinity);
 
-        public static readonly ReactiveProperty<double> MinHeightProperty =
-            ReactiveProperty<double>.Register("MinHeight", typeof(RowDefinition), 0d);
+        public static readonly ReactiveProperty<RxDouble> MinHeightProperty =
+            ReactiveProperty<RxDouble>.Register("MinHeight",
+                                                typeof (RowDefinition),
+                                                0d);
 
         public RowDefinition()
             : base(DefinitionType.Row)

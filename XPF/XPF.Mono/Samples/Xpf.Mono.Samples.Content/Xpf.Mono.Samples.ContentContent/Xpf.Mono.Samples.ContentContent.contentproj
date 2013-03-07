@@ -58,12 +58,12 @@
     <Compile Include="XpfSamples\S05\FaceDown.png">
       <Name>FaceDown</Name>
       <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+      <Processor>MGTextureProcessor</Processor>
     </Compile>
     <Compile Include="XpfSamples\S05\FaceUp.png">
       <Name>FaceUp</Name>
       <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+      <Processor>MGTextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

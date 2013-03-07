@@ -33,7 +33,10 @@ namespace RedBadger.Xpf.Controls
     public class ContentControl : Control
     {
         public static readonly ReactiveProperty<IElement> ContentProperty =
-            ReactiveProperty<IElement>.Register("Content", typeof(ContentControl), null, ContentPropertyChangedCallback);
+            ReactiveProperty<IElement>.Register("Content",
+                                                typeof (ContentControl),
+                                                null,
+                                                ContentPropertyChangedCallback);
 
         public IElement Content
         {

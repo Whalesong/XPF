@@ -23,6 +23,12 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxThickness = System.Reactive.MonoTouch.StructWrapper<RedBadger.Xpf.Thickness>;
+#else
+using RxThickness = RedBadger.Xpf.Thickness;
+#endif
+
 namespace RedBadger.Xpf.Controls
 {
     using System;
@@ -35,21 +41,29 @@ namespace RedBadger.Xpf.Controls
     public class TextBlock : UIElement
     {
         public static readonly ReactiveProperty<Brush> BackgroundProperty =
-            ReactiveProperty<Brush>.Register("Background", typeof(TextBlock));
+            ReactiveProperty<Brush>.Register("Background",
+                                             typeof (TextBlock));
 
         public static readonly ReactiveProperty<Brush> ForegroundProperty =
-            ReactiveProperty<Brush>.Register("Foreground", typeof(TextBlock));
+            ReactiveProperty<Brush>.Register("Foreground",
+                                             typeof (TextBlock));
 
-        public static readonly ReactiveProperty<Thickness> PaddingProperty =
-            ReactiveProperty<Thickness>.Register(
-                "Padding", typeof(TextBlock), ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxThickness> PaddingProperty =
+            ReactiveProperty<RxThickness>.Register("Padding",
+                                                 typeof (TextBlock),
+                                                 ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
-        public static readonly ReactiveProperty<string> TextProperty = ReactiveProperty<string>.Register(
-            "Text", typeof(TextBlock), string.Empty, ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<string> TextProperty =
+            ReactiveProperty<string>.Register("Text",
+                                              typeof (TextBlock),
+                                              string.Empty,
+                                              ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         public static readonly ReactiveProperty<TextWrapping> WrappingProperty =
-            ReactiveProperty<TextWrapping>.Register(
-                "Wrapping", typeof(TextBlock), TextWrapping.NoWrap, ReactivePropertyChangedCallbacks.InvalidateMeasure);
+            ReactiveProperty<TextWrapping>.Register("Wrapping",
+                                                    typeof (TextBlock),
+                                                    TextWrapping.NoWrap,
+                                                    ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         private static readonly Regex WhiteSpaceRegEx = new Regex(@"\s+", RegexOptions.Compiled);
 

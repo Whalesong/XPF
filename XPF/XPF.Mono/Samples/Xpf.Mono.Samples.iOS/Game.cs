@@ -25,7 +25,7 @@ namespace Xpf.Mono.Samples.iOS
 
         protected override void Initialize()
         {
-            //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S01.MyComponent(this));
+            //this.Components.Add(new Xpf.Mono.Samples.iOS.Samples.S01.MyComponent(this));
             //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S05.WithoutBindingFactory.MyComponent(this));
             //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S05.WithBindingFactory.MyComponent(this));
             this.Components.Add(new Xpf.Mono.Samples.iOS.Samples.R01.MyComponent(this));

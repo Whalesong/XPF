@@ -27,8 +27,37 @@ namespace RedBadger.Xpf
 {
     using System;
 
-    public struct GridLength
+    public struct GridLength:IEquatable<GridLength>
     {
+        public bool Equals(GridLength other)
+        {
+            return gridUnitType == other.gridUnitType && value.Equals(other.value);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is GridLength && Equals((GridLength) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((int) gridUnitType*397) ^ value.GetHashCode();
+            }
+        }
+
+        public static bool operator ==(GridLength left, GridLength right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(GridLength left, GridLength right)
+        {
+            return !left.Equals(right);
+        }
+
         private readonly GridUnitType gridUnitType;
 
         private readonly double value;

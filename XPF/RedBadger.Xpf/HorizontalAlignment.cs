@@ -23,13 +23,24 @@
 */
 #endregion
 
+using System;
+
 namespace RedBadger.Xpf
 {
-    public enum HorizontalAlignment
+    public class HorizontalAlignment:RefEnum
     {
-        Stretch, 
-        Left, 
-        Center, 
-        Right
+        private HorizontalAlignment(string txt, int id):base(txt,id){}
+
+        public static HorizontalAlignment Stretch{get{return new HorizontalAlignment("Stretch",1);}}
+        public static HorizontalAlignment Left { get { return new HorizontalAlignment("Left", 2); } }
+        public static HorizontalAlignment Center { get { return new HorizontalAlignment("Center", 4); } }
+        public static HorizontalAlignment Right { get { return new HorizontalAlignment("Right", 8); } }
     }
+    //public enum HorizontalAlignment
+    //{
+    //    Stretch,
+    //    Left,
+    //    Center,
+    //    Right
+    //}
 }

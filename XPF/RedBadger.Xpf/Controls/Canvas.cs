@@ -23,17 +23,29 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxDouble = System.Reactive.MonoTouch.ValueWrapper<double>;
+#else
+using RxDouble = System.Double;
+#endif
+
 namespace RedBadger.Xpf.Controls
 {
     using System;
 
     public class Canvas : Panel
     {
-        public static readonly ReactiveProperty<double> LeftProperty = ReactiveProperty<double>.Register(
-            "Left", typeof(Canvas), double.NaN, ReactivePropertyChangedCallbacks.InvalidateArrange);
+        public static readonly ReactiveProperty<RxDouble> LeftProperty =
+            ReactiveProperty<RxDouble>.Register("Left",
+                                              typeof (Canvas),
+                                              double.NaN,
+                                              ReactivePropertyChangedCallbacks.InvalidateArrange);
 
-        public static readonly ReactiveProperty<double> TopProperty = ReactiveProperty<double>.Register(
-            "Top", typeof(Canvas), double.NaN, ReactivePropertyChangedCallbacks.InvalidateArrange);
+        public static readonly ReactiveProperty<RxDouble> TopProperty =
+            ReactiveProperty<RxDouble>.Register("Top",
+                                              typeof (Canvas),
+                                              double.NaN,
+                                              ReactivePropertyChangedCallbacks.InvalidateArrange);
 
         public static double GetLeft(IElement element)
         {

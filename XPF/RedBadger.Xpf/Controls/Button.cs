@@ -23,15 +23,23 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxThickness = System.Reactive.MonoTouch.StructWrapper<RedBadger.Xpf.Thickness>;
+#else
+using RxThickness = RedBadger.Xpf.Thickness;
+#endif
+
 namespace RedBadger.Xpf.Controls
 {
     using RedBadger.Xpf.Controls.Primitives;
 
     public class Button : ButtonBase
     {
-        public static readonly ReactiveProperty<Thickness> PaddingProperty =
-            ReactiveProperty<Thickness>.Register(
-                "Padding", typeof(Button), new Thickness(), ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxThickness> PaddingProperty =
+            ReactiveProperty<RxThickness>.Register("Padding",
+                                                   typeof (Button),
+                                                   new Thickness(),
+                                                   ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         public Thickness Padding
         {

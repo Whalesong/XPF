@@ -23,19 +23,33 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxBool = System.Reactive.MonoTouch.ValueWrapper<System.Boolean>;
+using RxDouble = System.Reactive.MonoTouch.ValueWrapper<System.Double>;
+using RxGridLength = System.Reactive.MonoTouch.StructWrapper<RedBadger.Xpf.GridLength>;
+#else
+using RxBool = System.Boolean;
+using RxDouble = System.Double;
+using RxGridLength = RedBadger.Xpf.GridLength;
+#endif
 namespace RedBadger.Xpf.Controls
 {
     public class ColumnDefinition : DefinitionBase
     {
-        public static readonly ReactiveProperty<double> MaxWidthProperty = ReactiveProperty<double>.Register(
-            "MaxWidth", typeof(ColumnDefinition), double.PositiveInfinity);
+        public static readonly ReactiveProperty<RxDouble> MaxWidthProperty =
+            ReactiveProperty<RxDouble>.Register("MaxWidth",
+                                                typeof (ColumnDefinition),
+                                                double.PositiveInfinity);
 
-        public static readonly ReactiveProperty<double> MinWidthProperty = ReactiveProperty<double>.Register(
-            "MinWidth", typeof(ColumnDefinition), 0d);
+        public static readonly ReactiveProperty<RxDouble> MinWidthProperty =
+            ReactiveProperty<RxDouble>.Register("MinWidth",
+                                              typeof (ColumnDefinition),
+                                              0d);
 
-        public static readonly ReactiveProperty<GridLength> WidthProperty =
-            ReactiveProperty<GridLength>.Register(
-                "Width", typeof(ColumnDefinition), new GridLength(1, GridUnitType.Star));
+        public static readonly ReactiveProperty<RxGridLength> WidthProperty =
+            ReactiveProperty<RxGridLength>.Register("Width",
+                                                  typeof (ColumnDefinition),
+                                                  new GridLength(1, GridUnitType.Star));
 
         public ColumnDefinition()
             : base(DefinitionType.Column)

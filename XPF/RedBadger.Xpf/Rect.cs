@@ -27,7 +27,7 @@ namespace RedBadger.Xpf
 {
     using System;
     using System.Diagnostics;
-
+	using System.Collections.Generic;
     using RedBadger.Xpf.Internal;
 
     /// <summary>
@@ -55,7 +55,7 @@ namespace RedBadger.Xpf
         ///     The Y coordinate of the top left corner of the <see cref = "Rect">Rect</see>.
         /// </summary>
         public double Y;
-
+        
         static Rect()
         {
             Empty = new Rect

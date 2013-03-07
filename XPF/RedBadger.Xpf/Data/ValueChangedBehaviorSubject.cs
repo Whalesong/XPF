@@ -29,7 +29,7 @@ namespace RedBadger.Xpf.Data
     using System.Reactive.Linq;
     using System.Reactive.Subjects;
 
-    internal class ValueChangedBehaviorSubject<T> : ISubject<T>
+    public class ValueChangedBehaviorSubject<T> : ISubject<T>
     {
         private readonly BehaviorSubject<T> subject;
 

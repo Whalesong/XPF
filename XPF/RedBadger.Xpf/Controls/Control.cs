@@ -23,12 +23,20 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxBool = System.Reactive.MonoTouch.ValueWrapper<System.Boolean>;
+#else
+using RxBool = System.Boolean;
+#endif
+
 namespace RedBadger.Xpf.Controls
 {
     public class Control : UIElement
     {
-        public static readonly ReactiveProperty<bool> IsEnabledProperty = ReactiveProperty<bool>.Register(
-            "IsEnabled", typeof(Control), true);
+        public static readonly ReactiveProperty<RxBool> IsEnabledProperty =
+            ReactiveProperty<RxBool>.Register("IsEnabled",
+                                            typeof (Control),
+                                            true);
 
         public bool IsEnabled
         {

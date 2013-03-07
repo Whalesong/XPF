@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>RedBadger.Xpf.Adapters.Xna.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>RedBadger.Xpf.Adapters.Xna.iOS</AssemblyName>
+    <AssemblyName>RedBadgerXpfAdaptersXnaiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>

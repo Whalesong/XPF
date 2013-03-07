@@ -111,27 +111,46 @@ namespace RedBadger.Xpf.Controls
 
         protected override void OnNextGesture(Gesture gesture)
         {
-            switch (gesture.Type)
-            {
-                case GestureType.LeftButtonDown:
-                    this.CaptureMouse();
-                    break;
-                case GestureType.FreeDrag:
-                    if (this.scrollInfo != null && this.IsMouseCaptured)
-                    {
-                        this.scrollInfo.SetHorizontalOffset(this.scrollInfo.Offset.X - gesture.Delta.X);
-                        this.scrollInfo.SetVerticalOffset(this.scrollInfo.Offset.Y - gesture.Delta.Y);
-                    }
-
-                    break;
-                case GestureType.LeftButtonUp:
-                    if (this.IsMouseCaptured)
-                    {
-                        this.ReleaseMouseCapture();
-                    }
-
-                    break;
+            if(gesture.Type.Equals(GestureType.LeftButtonDown))
+            { 
+                this.CaptureMouse(); 
             }
+            else if (gesture.Type.Equals(GestureType.FreeDrag))
+            {
+                if (this.scrollInfo != null && this.IsMouseCaptured)
+                {
+                    this.scrollInfo.SetHorizontalOffset(this.scrollInfo.Offset.X - gesture.Delta.X);
+                    this.scrollInfo.SetVerticalOffset(this.scrollInfo.Offset.Y - gesture.Delta.Y);
+                }
+            }
+            else if (gesture.Type.Equals(GestureType.LeftButtonUp))
+            {
+                if (this.IsMouseCaptured)
+                {
+                    this.ReleaseMouseCapture();
+                }
+            }
+            //switch (gesture.Type)
+            //{
+            //    case GestureType.LeftButtonDown:
+            //        this.CaptureMouse();
+            //        break;
+            //    case GestureType.FreeDrag:
+            //        if (this.scrollInfo != null && this.IsMouseCaptured)
+            //        {
+            //            this.scrollInfo.SetHorizontalOffset(this.scrollInfo.Offset.X - gesture.Delta.X);
+            //            this.scrollInfo.SetVerticalOffset(this.scrollInfo.Offset.Y - gesture.Delta.Y);
+            //        }
+
+            //        break;
+            //    case GestureType.LeftButtonUp:
+            //        if (this.IsMouseCaptured)
+            //        {
+            //            this.ReleaseMouseCapture();
+            //        }
+
+            //        break;
+            //}
         }
     }
 }

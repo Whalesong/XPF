@@ -23,6 +23,16 @@
 */
 #endregion
 
+#if MONOTOUCH
+    using RxBool = System.Reactive.MonoTouch.ValueWrapper<System.Boolean>;
+    using RxDouble = System.Reactive.MonoTouch.ValueWrapper<System.Double>;
+    using RxInt32 = System.Reactive.MonoTouch.ValueWrapper<System.Int32>;
+#else
+    using RxBool = System.Boolean;
+    using RxDouble = System.Double;
+    using RxInt32 = System.Int32.
+#endif
+
 namespace RedBadger.Xpf.Controls
 {
     using System;
@@ -39,13 +49,16 @@ namespace RedBadger.Xpf.Controls
         /// <summary>
         ///     Column attached property.
         /// </summary>
-        public static readonly ReactiveProperty<int> ColumnProperty = ReactiveProperty<int>.Register(
-            "Column", typeof(Grid));
+        public static readonly ReactiveProperty<RxInt32> ColumnProperty =
+            ReactiveProperty<RxInt32>.Register("Column",
+                                               typeof (Grid));
 
         /// <summary>
         ///     Row attached property.
         /// </summary>
-        public static readonly ReactiveProperty<int> RowProperty = ReactiveProperty<int>.Register("Row", typeof(Grid));
+        public static readonly ReactiveProperty<RxInt32> RowProperty =
+            ReactiveProperty<RxInt32>.Register("Row",
+                                               typeof (Grid));
 
         private readonly LinkedList<Cell> allStars = new LinkedList<Cell>();
 

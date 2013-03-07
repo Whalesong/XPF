@@ -25,11 +25,20 @@
 
 namespace RedBadger.Xpf.Media
 {
-    public enum Stretch
+    public class Stretch:RefEnum
     {
-        None, 
-        Fill, 
-        Uniform, 
-        UniformToFill
+        private Stretch(string txt, int id):base(txt,id){}
+
+        public static Stretch None{get{return new Stretch("None",1);}}
+        public static Stretch Fill{get{return new Stretch("Fill",2);}}
+        public static Stretch Uniform {get{return new Stretch("Uniform",4);}}
+        public static Stretch UniformToFill{get{return new Stretch("UniformToFill",8);}}
     }
+    //public enum Stretch
+    //{
+    //    None, 
+    //    Fill, 
+    //    Uniform, 
+    //    UniformToFill
+    //}
 }

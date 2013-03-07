@@ -23,6 +23,12 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxRect = System.Reactive.MonoTouch.StructWrapper<RedBadger.Xpf.Rect>;
+#else
+using RxRect = RedBadger.Xpf.Rect;
+#endif
+
 namespace RedBadger.Xpf.Controls
 {
     using System;
@@ -31,7 +37,7 @@ namespace RedBadger.Xpf.Controls
     using RedBadger.Xpf.Graphics;
     using RedBadger.Xpf.Input;
     using RedBadger.Xpf.Media;
-
+    using System.Reactive.MonoTouch;
     /// <summary>
     ///     RootElement is the main host for all <see cref = "IElement">IElement</see>s, it manages the renderer, user input and is the target for Update/Draw calls.
     /// </summary>
@@ -40,8 +46,10 @@ namespace RedBadger.Xpf.Controls
         /// <summary>
         ///     <see cref = "Viewport">Viewport</see> Reactive Property.
         /// </summary>
-        public static readonly ReactiveProperty<Rect> ViewportProperty = ReactiveProperty<Rect>.Register(
-            "Viewport", typeof(RootElement), ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<RxRect> ViewportProperty =
+            ReactiveProperty<RxRect>.Register("Viewport",
+                                            typeof (RootElement),
+                                            ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         private readonly IInputManager inputManager;
 

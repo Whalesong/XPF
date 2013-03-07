@@ -25,11 +25,20 @@
 
 namespace RedBadger.Xpf.Input
 {
-    public enum GestureType
+    public class GestureType:RefEnum
     {
-        LeftButtonDown, 
-        LeftButtonUp, 
-        Move, 
-        FreeDrag
+        private GestureType(string txt, int id):base(txt,id){}
+
+        public static GestureType LeftButtonDown{get{return new GestureType("LeftButtonDown",1);}}
+        public static GestureType LeftButtonUp{get{return new GestureType("LeftButtonUp",2);}}
+        public static GestureType Move{get{return new GestureType("Move",4);}}
+        public static GestureType FreeDrag{get{return new GestureType("FreeDrag", 8);}}
     }
+    //public enum GestureType
+    //{
+    //    LeftButtonDown, 
+    //    LeftButtonUp, 
+    //    Move, 
+    //    FreeDrag
+    //}
 }
