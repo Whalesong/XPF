@@ -32,18 +32,22 @@ namespace RedBadger.Xpf.Controls
     public class Image : UIElement
     {
         public static readonly ReactiveProperty<ImageSource> SourceProperty =
-            ReactiveProperty<ImageSource>.Register(
-                "Source", typeof(Image), null, ReactivePropertyChangedCallbacks.InvalidateMeasure);
+            ReactiveProperty<ImageSource>.Register("Source",
+                                                   typeof (Image),
+                                                   null,
+                                                   ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         public static readonly ReactiveProperty<StretchDirection> StretchDirectionProperty =
-            ReactiveProperty<StretchDirection>.Register(
-                "StretchDirection", 
-                typeof(Image), 
-                StretchDirection.Both, 
-                ReactivePropertyChangedCallbacks.InvalidateMeasure);
+            ReactiveProperty<StretchDirection>.Register("StretchDirection",
+                                                        typeof (Image),
+                                                        StretchDirection.Both,
+                                                        ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
-        public static readonly ReactiveProperty<Stretch> StretchProperty = ReactiveProperty<Stretch>.Register(
-            "Stretch", typeof(Image), Stretch.Uniform, ReactivePropertyChangedCallbacks.InvalidateMeasure);
+        public static readonly ReactiveProperty<Stretch> StretchProperty =
+            ReactiveProperty<Stretch>.Register("Stretch",
+                                               typeof (Image),
+                                               Stretch.Uniform,
+                                               ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         public ImageSource Source
         {

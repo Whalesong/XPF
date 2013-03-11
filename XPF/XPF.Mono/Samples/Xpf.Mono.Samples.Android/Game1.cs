@@ -16,8 +16,8 @@ namespace Xpf.Mono.Samples.Android
             graphics = new GraphicsDeviceManager(this);
             //graphics.PreferredBackBufferWidth = 800;
             //graphics.PreferredBackBufferHeight = 480;
-            Content.RootDirectory = "Content/XpfSamples/S01";
-            //Content.RootDirectory = "Content/XpfSamples/S05";
+            //Content.RootDirectory = "Content/XpfSamples/S01";
+            Content.RootDirectory = "Content/XpfSamples/S05";
             graphics.IsFullScreen = true;
             graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
         }
@@ -32,9 +32,9 @@ namespace Xpf.Mono.Samples.Android
         {
             // TODO: Add your initialization logic here
             //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S01.MyComponent(this));
-            //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S05.WithoutBindingFactory.MyComponent(this));
+            this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S05.WithoutBindingFactory.MyComponent(this));
             //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.S05.WithBindingFactory.MyComponent(this));
-            this.Components.Add(new Xpf.Mono.Samples.Android.Samples.R01.MyComponent(this));
+            //this.Components.Add(new Xpf.Mono.Samples.Android.Samples.R01.MyComponent(this));
             base.Initialize();
         }
 

@@ -85,15 +85,15 @@ namespace Xpf.Mono.Samples.Android.Samples.S05.WithBindingFactory
 
             var card = new Card(faceDownImage, faceUpImage);
 
-            cardImage.Bind(
-                Image.SourceProperty,
-                BindingFactory.CreateOneWay<Card, ImageSource>(card, d => d.CardImage));
+            //cardImage.Bind(
+            //    Image.SourceProperty,
+            //    BindingFactory.CreateOneWay<Card, ImageSource>(card, d => d.CardImage));
 
-            cardToggleButton.Bind(
-                ToggleButton.IsCheckedProperty,
-                BindingFactory.CreateTwoWay(card, d => d.IsCardFaceUp));
+            //cardToggleButton.Bind<bool>(
+            //    ToggleButton.IsCheckedProperty,
+            //    BindingFactory.CreateTwoWay(card, d => d.IsCardFaceUp));
 
-            resetButton.Click += (sender, args) => card.Reset();
+            //resetButton.Click += (sender, args) => card.Reset();
         }
     }
 }

@@ -11,13 +11,14 @@ namespace Xpf.Mono.Samples.iOS
 	[Register("AppDelegate")]
 	class Program : UIApplicationDelegate
 	{
-		Game1 game;
-
+		private Game1 game;
+	    //private Samples.XpfSamples.RedBadger.Xpf.Sandbox.Game1 game;
 		public override void FinishedLaunching (UIApplication app)
 		{
 			// Fun begins..
 			game = new Game1 ();
-			game.Run ();
+		    //game = new Samples.XpfSamples.RedBadger.Xpf.Sandbox.Game1();
+            game.Run ();
 		}
 
 		/// <summary>

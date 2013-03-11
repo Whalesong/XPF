@@ -18,7 +18,7 @@ namespace Xpf.Mono.Samples.WindowsGL.Samples.S05.WithoutBindingFactory
 
         private readonly ISubject<ImageSource> cardImage = new Subject<ImageSource>();
 
-        private readonly ISubject<bool?> isCardFaceUp = new Subject<bool?>();
+        private readonly ISubject<bool> isCardFaceUp = new Subject<bool>();
 
         public Card(TextureImage faceDownImage, TextureImage faceUpImage)
         {
@@ -39,7 +39,7 @@ namespace Xpf.Mono.Samples.WindowsGL.Samples.S05.WithoutBindingFactory
             }
         }
 
-        public ISubject<bool?> IsCardFaceUp
+        public ISubject<bool> IsCardFaceUp
         {
             get
             {
@@ -52,12 +52,12 @@ namespace Xpf.Mono.Samples.WindowsGL.Samples.S05.WithoutBindingFactory
             this.isCardFaceUp.OnNext(false);
         }
 
-        private void OnIsCardFaceUpChanged(bool? value)
+        private void OnIsCardFaceUpChanged(bool value)
         {
-            if (value.HasValue)
-            {
+            //if (value.HasValue)
+            //{
                 this.cardImage.OnNext((bool)value ? this.faceUpImage : this.faceDownImage);
-            }
+            //}
         }
     }
 }

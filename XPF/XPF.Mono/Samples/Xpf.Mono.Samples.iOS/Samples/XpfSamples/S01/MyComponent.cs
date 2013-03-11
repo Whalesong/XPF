@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RedBadger.Xpf;
 using RedBadger.Xpf.Adapters.Xna.Graphics;
 using RedBadger.Xpf.Controls;
 using RedBadger.Xpf.Media;
+using Color = RedBadger.Xpf.Media.Color;
 
-namespace Xpf.Mono.Samples.iOS.Samples.S01
+namespace Xpf.Mono.Samples.iOS.Samples.XpfSamples.S01
 {
-    using Color = RedBadger.Xpf.Media.Color;
-
     public class MyComponent : DrawableGameComponent
     {
         private RootElement rootElement;
@@ -44,8 +39,8 @@ namespace Xpf.Mono.Samples.iOS.Samples.S01
 
             this.rootElement = new RootElement(this.GraphicsDevice.Viewport.ToRect(), renderer);
 
-            //var spriteFont = this.Game.Content.Load<SpriteFont>("MySpriteFont");
-            //var spriteFontAdapter = new SpriteFontAdapter(spriteFont);
+            var spriteFont = this.Game.Content.Load<SpriteFont>("MySpriteFont");
+            var spriteFontAdapter = new SpriteFontAdapter(spriteFont);
 
             var grid = new Grid
             {
@@ -67,7 +62,7 @@ namespace Xpf.Mono.Samples.iOS.Samples.S01
             {
                 BorderBrush = new SolidColorBrush(Colors.Black),
                 BorderThickness = new Thickness(0, 0, 0, 2),
-                //Child = new TextBlock(spriteFontAdapter) { Text = "Score: 5483", Margin = new Thickness(10) }
+                Child = new TextBlock(spriteFontAdapter) { Text = "Score: 5483", Margin = new Thickness(10) }
             };
             Grid.SetRow(topLeftBorder, 0);
             Grid.SetColumn(topLeftBorder, 0);
@@ -77,13 +72,13 @@ namespace Xpf.Mono.Samples.iOS.Samples.S01
             {
                 BorderBrush = new SolidColorBrush(Colors.Black),
                 BorderThickness = new Thickness(0, 0, 0, 2),
-//                Child =
-//                    new TextBlock(spriteFontAdapter)
-//                    {
-//                        Text = "High: 9999",
-//                        Margin = new Thickness(10),
-//                        HorizontalAlignment = HorizontalAlignment.Right
-//                    }
+                Child =
+                    new TextBlock(spriteFontAdapter)
+                    {
+                        Text = "High: 9999",
+                        Margin = new Thickness(10),
+                        HorizontalAlignment = HorizontalAlignment.Right
+                    }
             };
             Grid.SetRow(topRightBorder, 0);
             Grid.SetColumn(topRightBorder, 1);
@@ -94,13 +89,13 @@ namespace Xpf.Mono.Samples.iOS.Samples.S01
                 BorderBrush = new SolidColorBrush(Colors.Black),
                 BorderThickness = new Thickness(0, 2, 0, 0),
                 Background = new SolidColorBrush(new Color(106, 168, 79, 255)),
-//                Child =
-//                    new TextBlock(spriteFontAdapter)
-//                    {
-//                        Text = "Lives: 3",
-//                        Margin = new Thickness(10),
-//                        VerticalAlignment = VerticalAlignment.Bottom
-//                    }
+                Child =
+                    new TextBlock(spriteFontAdapter)
+                    {
+                        Text = "Lives: 3",
+                        Margin = new Thickness(10),
+                        VerticalAlignment = VerticalAlignment.Bottom
+                    }
             };
             Grid.SetRow(bottomLeftBorder, 2);
             Grid.SetColumn(bottomLeftBorder, 0);

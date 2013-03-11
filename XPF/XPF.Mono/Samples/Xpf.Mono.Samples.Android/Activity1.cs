@@ -19,6 +19,10 @@ namespace Xpf.Mono.Samples.Android
             base.OnCreate(bundle);
             Game1.Activity = this;
             var g = new Game1();
+
+            //Samples.RedBadger.Xpf.Sandbox.Game1.Activity = this;
+            //var g = new Samples.RedBadger.Xpf.Sandbox.Game1();
+            
             SetContentView(g.Window);
             g.Run();
         }

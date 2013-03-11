@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
 using RedBadger.Xpf;
 using RedBadger.Xpf.Adapters.Xna.Graphics;
 using RedBadger.Xpf.Adapters.Xna.Input;
@@ -9,10 +8,8 @@ using RedBadger.Xpf.Controls;
 using RedBadger.Xpf.Data;
 using RedBadger.Xpf.Media;
 
-namespace Xpf.Mono.Samples.iOS.Samples.R01
+namespace Xpf.Mono.Samples.iOS.Samples.XpfSamples.R01
 {
-    using Color = RedBadger.Xpf.Media.Color;
-
     public class MyComponent : DrawableGameComponent
     {
         private RootElement rootElement;

@@ -6,9 +6,11 @@ using RedBadger.Xpf.Adapters.Xna.Graphics;
 using RedBadger.Xpf.Controls;
 using RedBadger.Xpf.Media;
 
+using Color = RedBadger.Xpf.Media.Color;
+
 namespace Xpf.Mono.Samples.Android.Samples.S01
 {
-    using Color = RedBadger.Xpf.Media.Color;
+    
 
     public class MyComponent : DrawableGameComponent
     {

@@ -25,8 +25,8 @@ namespace Xpf.Mono.Samples.WindowsGL
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 480;
             IsMouseVisible = true;
-            Content.RootDirectory = "Content/XpfSamples/S01";
-            //Content.RootDirectory = "Content/XpfSamples/S05";
+            //Content.RootDirectory = "Content/XpfSamples/S01";
+            Content.RootDirectory = "Content/XpfSamples/S05";
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace Xpf.Mono.Samples.WindowsGL
         {
             // TODO: Add your initialization logic here
             //this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.S01.MyComponent(this));
-            //this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.S05.WithoutBindingFactory.MyComponent(this));
+            this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.S05.WithoutBindingFactory.MyComponent(this));
             //this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.S05.WithBindingFactory.MyComponent(this));
-            this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.R01.MyComponent(this));
+            //this.Components.Add(new Xpf.Mono.Samples.WindowsGL.Samples.R01.MyComponent(this));
             base.Initialize();
         }
 

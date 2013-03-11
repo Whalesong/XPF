@@ -23,6 +23,12 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxBool = System.Reactive.MonoTouch.ValueWrapper<System.Boolean>;
+#else
+using RxBool = System.Boolean;
+#endif
+
 namespace RedBadger.Xpf.Controls.Primitives
 {
     using System;
@@ -31,8 +37,10 @@ namespace RedBadger.Xpf.Controls.Primitives
 
     public abstract class ButtonBase : ContentControl, IInputElement
     {
-        public static readonly ReactiveProperty<bool> IsPressedProperty = ReactiveProperty<bool>.Register(
-            "IsPressed", typeof(ButtonBase), false);
+        public static readonly ReactiveProperty<RxBool> IsPressedProperty =
+            ReactiveProperty<RxBool>.Register("IsPressed",
+                                              typeof (ButtonBase),
+                                              false);
 
         private bool isLeftButtonDown;
 

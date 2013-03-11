@@ -58,6 +58,12 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Samples\R01\MyComponent.cs" />
+    <Compile Include="Samples\RedBadger.Xpf.Sandbox\Game1.cs" />
+    <Compile Include="Samples\RedBadger.Xpf.Sandbox\InputManagerWindows.cs" />
+    <Compile Include="Samples\RedBadger.Xpf.Sandbox\MainGame.cs" />
+    <Compile Include="Samples\RedBadger.Xpf.Sandbox\MapEditor.cs" />
+    <Compile Include="Samples\RedBadger.Xpf.Sandbox\MyComponent.cs" />
+    <Compile Include="Samples\RedBadger.Xpf.Sandbox\NinePatch.cs" />
     <Compile Include="Samples\S01\MyComponent.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -87,6 +93,48 @@
     </AndroidAsset>
     <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\S05\SpriteFont.xnb">
       <Link>Assets\Content\XpfSamples\S05\SpriteFont.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\bulb.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\bulb.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\SpriteFont.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\SpriteFont.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger1.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger1.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger2.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger2.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger3.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger3.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c1.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c1.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c2.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c2.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c3.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c3.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c4.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c4.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e1.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e1.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e2.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e2.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e3.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e3.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e4.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e4.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\Android\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\m.xnb">
+      <Link>Assets\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\m.xnb</Link>
     </AndroidAsset>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />

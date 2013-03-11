@@ -9,10 +9,10 @@ using RedBadger.Xpf.Controls;
 using RedBadger.Xpf.Data;
 using RedBadger.Xpf.Media;
 
+using Color = RedBadger.Xpf.Media.Color;
+
 namespace Xpf.Mono.Samples.Android.Samples.R01
 {
-    using Color = RedBadger.Xpf.Media.Color;
-
     public class MyComponent : DrawableGameComponent
     {
         private RootElement rootElement;

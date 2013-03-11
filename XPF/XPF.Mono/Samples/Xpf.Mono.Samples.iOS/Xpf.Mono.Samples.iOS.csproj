@@ -85,13 +85,80 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Samples\Samples\R01\MyComponent.cs" />
-    <Compile Include="Samples\Samples\S01\MyComponent.cs" />
+    <Compile Include="Samples\XpfSamples\R01\MyComponent.cs" />
+    <Compile Include="Samples\XpfSamples\RedBadger.Xpf.Sandbox\Game1.cs" />
+    <Compile Include="Samples\XpfSamples\RedBadger.Xpf.Sandbox\InputManagerWindows.cs" />
+    <Compile Include="Samples\XpfSamples\RedBadger.Xpf.Sandbox\MainGame.cs" />
+    <Compile Include="Samples\XpfSamples\RedBadger.Xpf.Sandbox\MapEditor.cs" />
+    <Compile Include="Samples\XpfSamples\RedBadger.Xpf.Sandbox\MyComponent.cs" />
+    <Compile Include="Samples\XpfSamples\RedBadger.Xpf.Sandbox\NinePatch.cs" />
+    <Compile Include="Samples\XpfSamples\S01\MyComponent.cs" />
     <Compile Include="Game2.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Samples\XpfSamples\S05\WithoutBindingFactory\Card.cs" />
+    <Compile Include="Samples\XpfSamples\S05\WithoutBindingFactory\MyComponent.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\bulb.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\bulb.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\SpriteFont.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\SpriteFont.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger1.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger1.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger2.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger2.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger3.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger3.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c1.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c1.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c2.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c2.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c3.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c3.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c4.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\c4.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e1.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e1.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e2.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e2.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e3.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e3.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e4.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\e4.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\m.xnb">
+      <Link>Content\XpfSamples\RedBadger.Xpf.Sandbox\UI\m.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Info.plist" />
+    <None Include="Content\XpfSamples\S01\MySpriteFont2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Default.png" />
@@ -121,13 +188,7 @@
       <Name>rx-monotouch</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\XpfSamples\" />
-    <Folder Include="Content\XpfSamples\S01\" />
-    <Folder Include="Content\XpfSamples\S05\" />
-    <Folder Include="Samples\" />
-    <Folder Include="Samples\Samples\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="..\Xpf.Mono.Samples.Content\Xpf.Mono.Samples.Content\bin\iOS\Content\XpfSamples\S05\SpriteFont.xnb">
       <Link>Content\XpfSamples\S05\SpriteFont.xnb</Link>

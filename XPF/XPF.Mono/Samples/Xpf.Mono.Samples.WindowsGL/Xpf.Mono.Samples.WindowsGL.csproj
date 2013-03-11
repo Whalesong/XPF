@@ -40,8 +40,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Samples\R01\MyComponent.cs" />
     <Compile Include="Samples\S01\MyComponent.cs" />
-    <Compile Include="Samples\S05\WithBindingFactory\Card.cs" />
-    <Compile Include="Samples\S05\WithBindingFactory\MyComponent.cs" />
     <Compile Include="Samples\S05\WithoutBindingFactory\Card.cs" />
     <Compile Include="Samples\S05\WithoutBindingFactory\MyComponent.cs" />
   </ItemGroup>
@@ -60,7 +58,9 @@
   <ItemGroup>
     <Content Include="Icon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Samples\S05\WithBindingFactory\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
       <Project>{7de47032-a904-4c29-bd22-2d235e8d91ba}</Project>

@@ -85,7 +85,7 @@ namespace Xpf.Mono.Samples.Android.Samples.S05.WithoutBindingFactory
                 Image.SourceProperty,
                 card.CardImage);
 
-            cardToggleButton.Bind(
+            cardToggleButton.Bind<bool>(
                 ToggleButton.IsCheckedProperty,
                 card.IsCardFaceUp,
                 card.IsCardFaceUp);

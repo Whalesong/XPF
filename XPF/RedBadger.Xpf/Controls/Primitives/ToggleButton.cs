@@ -23,6 +23,12 @@
 */
 #endregion
 
+#if MONOTOUCH
+using RxBool = System.Reactive.MonoTouch.ValueWrapper<System.Boolean>;
+#else
+using RxBool = System.Boolean;
+#endif
+
 namespace RedBadger.Xpf.Controls.Primitives
 {
     using System;
@@ -35,14 +41,19 @@ namespace RedBadger.Xpf.Controls.Primitives
         /// <summary>
         ///     <see cref = "IsChecked">IsChecked</see> Reactive Property.
         /// </summary>
-        public static readonly ReactiveProperty<bool?> IsCheckedProperty = ReactiveProperty<bool?>.Register(
-            "IsChecked", typeof(ToggleButton), false, OnIsCheckedPropertyChanged);
+        public static readonly ReactiveProperty<RxBool> IsCheckedProperty =
+            ReactiveProperty<RxBool>.Register("IsChecked",
+                                              typeof (ToggleButton),
+                                              false,
+                                              OnIsCheckedPropertyChanged);
 
         /// <summary>
         ///     <see cref = "IsThreeState">IsThreeState</see> Reactive Property.
         /// </summary>
-        public static readonly ReactiveProperty<bool> IsThreeStateProperty =
-            ReactiveProperty<bool>.Register("IsThreeState", typeof(ToggleButton));
+        public static readonly ReactiveProperty<RxBool> IsThreeStateProperty =
+            ReactiveProperty<RxBool>.Register("IsThreeState",
+                                              typeof (ToggleButton),
+                                              false);
 
         /// <summary>
         ///     Occurs when a <see cref = "ToggleButton">ToggleButton</see> is checked.
@@ -74,7 +85,11 @@ namespace RedBadger.Xpf.Controls.Primitives
 
             set
             {
-                this.SetValue(IsCheckedProperty, value);
+#if MONOTOUCH
+                this.SetValue(IsCheckedProperty,value);
+#else
+                this.SetValue(IsCheckedProperty, value.GetValueOrDefault());
+#endif
             }
         }
 
@@ -145,7 +160,7 @@ namespace RedBadger.Xpf.Controls.Primitives
         }
 
         private static void OnIsCheckedPropertyChanged(
-            IReactiveObject source, ReactivePropertyChangeEventArgs<bool?> args)
+            IReactiveObject source, ReactivePropertyChangeEventArgs<RxBool> args)
         {
             var button = source as ToggleButton;
             if (button == null)

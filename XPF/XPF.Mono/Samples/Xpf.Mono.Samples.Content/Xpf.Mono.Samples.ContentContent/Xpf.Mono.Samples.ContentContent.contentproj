@@ -43,15 +43,14 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.XImporter" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.AudioImporters" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters" />
-    <Reference Include="MonoGameContentProcessors">
-      <HintPath>$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGameContentProcessors.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="XpfSamples\S01\MySpriteFont.spritefont">
       <Name>MySpriteFont</Name>
       <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
+      <Processor>MGSpriteFontDescriptionProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -70,7 +69,108 @@
     <Compile Include="XpfSamples\S05\SpriteFont.spritefont">
       <Name>SpriteFont</Name>
       <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
+      <Processor>MGSpriteFontDescriptionProcessor</Processor>
+      <SubType>Designer</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\MonoGame\MonoGame.ContentPipeline\ContentProcessors\MonoGameContentProcessors.csproj">
+      <Project>{2C23E01D-DE2D-4671-85B0-1085857C6D25}</Project>
+      <Name>MonoGameContentProcessors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger1.jpg">
+      <Name>Badger1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger2.jpg">
+      <Name>Badger2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\Textures\Badger3.jpg">
+      <Name>Badger3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\UI\m.png">
+      <Name>m</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\UI\c1.png">
+      <Name>c1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\UI\c2.png">
+      <Name>c2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\UI\c3.png">
+      <Name>c3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\UI\c4.png">
+      <Name>c4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\UI\e1.png">
+      <Name>e1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\UI\e2.png">
+      <Name>e2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\UI\e3.png">
+      <Name>e3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\UI\e4.png">
+      <Name>e4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\bulb.png">
+      <Name>bulb</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>MGTextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XpfSamples\RedBadger.Xpf.Sandbox\SpriteFont.spritefont">
+      <Name>SpriteFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>MGSpriteFontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

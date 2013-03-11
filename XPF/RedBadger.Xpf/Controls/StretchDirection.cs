@@ -25,10 +25,19 @@
 
 namespace RedBadger.Xpf.Controls
 {
-    public enum StretchDirection
+    public class StretchDirection:RefEnum
     {
-        UpOnly, 
-        DownOnly, 
-        Both
+        public StretchDirection(string txt, int id) : base(txt, id)
+        {}
+
+        public static StretchDirection UpOnly{get{return new StretchDirection("UpOnly",1);}}
+        public static StretchDirection DownOnly{get{return new StretchDirection("DownOnly",2);}}
+        public static StretchDirection Both{get{return new StretchDirection("Both",4);}}
     }
+    //public enum StretchDirection
+    //{
+    //    UpOnly, 
+    //    DownOnly, 
+    //    Both
+    //}
 }

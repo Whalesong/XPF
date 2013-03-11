@@ -75,34 +75,59 @@ namespace RedBadger.Xpf.Internal.Controls
                 //}
             }
 
-            switch (stretchDirection)
+            if (stretchDirection.Equals(StretchDirection.UpOnly))
             {
-                case StretchDirection.UpOnly:
-                    if (scaleX < 1.0)
-                    {
-                        scaleX = 1.0;
-                    }
+                if (scaleX < 1.0)
+                {
+                    scaleX = 1.0;
+                }
 
-                    if (scaleY < 1.0)
-                    {
-                        scaleY = 1.0;
-                    }
-
-                    break;
-
-                case StretchDirection.DownOnly:
-                    if (scaleX > 1.0)
-                    {
-                        scaleX = 1.0;
-                    }
-
-                    if (scaleY > 1.0)
-                    {
-                        scaleY = 1.0;
-                    }
-
-                    break;
+                if (scaleY < 1.0)
+                {
+                    scaleY = 1.0;
+                }
             }
+            else if (stretchDirection.Equals(StretchDirection.DownOnly))
+            {
+                if (scaleX > 1.0)
+                {
+                    scaleX = 1.0;
+                }
+
+                if (scaleY > 1.0)
+                {
+                    scaleY = 1.0;
+                }
+            }
+            
+            //switch (stretchDirection)
+            //{
+            //    case StretchDirection.UpOnly:
+            //        if (scaleX < 1.0)
+            //        {
+            //            scaleX = 1.0;
+            //        }
+
+            //        if (scaleY < 1.0)
+            //        {
+            //            scaleY = 1.0;
+            //        }
+
+            //        break;
+
+            //    case StretchDirection.DownOnly:
+            //        if (scaleX > 1.0)
+            //        {
+            //            scaleX = 1.0;
+            //        }
+
+            //        if (scaleY > 1.0)
+            //        {
+            //            scaleY = 1.0;
+            //        }
+
+            //        break;
+            //}
 
             return new Vector(scaleX, scaleY);
         }

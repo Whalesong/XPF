@@ -51,6 +51,7 @@ namespace RedBadger.Xpf.Controls
         public static readonly ReactiveProperty<RxThickness> PaddingProperty =
             ReactiveProperty<RxThickness>.Register("Padding",
                                                  typeof (TextBlock),
+			                                       new Thickness(),
                                                  ReactivePropertyChangedCallbacks.InvalidateMeasure);
 
         public static readonly ReactiveProperty<string> TextProperty =

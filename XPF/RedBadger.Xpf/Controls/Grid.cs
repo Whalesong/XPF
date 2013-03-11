@@ -30,7 +30,7 @@
 #else
     using RxBool = System.Boolean;
     using RxDouble = System.Double;
-    using RxInt32 = System.Int32.
+    using RxInt32 = System.Int32;
 #endif
 
 namespace RedBadger.Xpf.Controls
@@ -51,14 +51,16 @@ namespace RedBadger.Xpf.Controls
         /// </summary>
         public static readonly ReactiveProperty<RxInt32> ColumnProperty =
             ReactiveProperty<RxInt32>.Register("Column",
-                                               typeof (Grid));
+                                               typeof (Grid),
+                                               default(Int32));
 
         /// <summary>
         ///     Row attached property.
         /// </summary>
         public static readonly ReactiveProperty<RxInt32> RowProperty =
             ReactiveProperty<RxInt32>.Register("Row",
-                                               typeof (Grid));
+                                               typeof (Grid),
+                                               default(Int32));
 
         private readonly LinkedList<Cell> allStars = new LinkedList<Cell>();
 
